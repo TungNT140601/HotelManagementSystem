@@ -7,7 +7,7 @@ namespace HotelManagementSystem.WebApi.Models.Customer
     {
         [Key]
         [Required]
-        public int CustomerId { get; set; }
+        public string CustomerId { get; set; }
         [Required]
         [MaxLength(50)]
         public string CustomerName { get; set; }

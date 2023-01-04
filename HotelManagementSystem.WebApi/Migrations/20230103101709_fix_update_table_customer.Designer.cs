@@ -3,6 +3,7 @@ using HotelManagementSystem.WebApi.DatabaseContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelManagementSystem.WebApi.Migrations
 {
     [DbContext(typeof(HotelManagementDBContext))]
-    partial class HotelManagementDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230103101709_fix_update_table_customer")]
+    partial class fixupdatetablecustomer
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

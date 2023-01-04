@@ -3,6 +3,7 @@ using HotelManagementSystem.WebApi.DatabaseContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelManagementSystem.WebApi.Migrations
 {
     [DbContext(typeof(HotelManagementDBContext))]
-    partial class HotelManagementDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230103101634_update_table_customer")]
+    partial class updatetablecustomer
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -23,8 +26,9 @@ namespace HotelManagementSystem.WebApi.Migrations
 
             modelBuilder.Entity("HotelManagementSystem.WebApi.Models.Customer.Customer", b =>
                 {
-                    b.Property<string>("CustomerId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<string>("CustomerName")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -33,11 +37,6 @@ namespace HotelManagementSystem.WebApi.Migrations
                     b.Property<string>("AddressProof")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CustomerName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Gender")
                         .IsRequired()
@@ -71,7 +70,7 @@ namespace HotelManagementSystem.WebApi.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.HasKey("CustomerId");
+                    b.HasKey("CustomerName");
 
                     b.ToTable("Customers");
                 });
