@@ -1,7 +1,8 @@
 ﻿using HotelManagementSystem.WebApi.DatabaseContext;
-using HotelManagementSystem.WebApi.Models.Customer;
+using HotelManagementSystem.WebApi.Models.CustomerModel;
 using HotelManagementSystem.WebApi.Services.CustomerService;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace HotelManagementSystem.WebApi.Controllers
 {
@@ -23,7 +24,7 @@ namespace HotelManagementSystem.WebApi.Controllers
             return await customerService.LoginCheck(input.Username, input.Password);
         }
         [HttpGet]
-        public async Task<Dictionary<string, object>> GetCustomerById(string id)
+        public async Task<Dictionary<string, object>> GetCustomerById([Required] string id)
         {
             return await customerService.GetCustomerById(id);
         }
@@ -38,7 +39,7 @@ namespace HotelManagementSystem.WebApi.Controllers
             return await customerService.CreateOrUpdateCustomer(input);
         }
         [HttpDelete]
-        public async Task<Dictionary<string, object>> DeleteCustomer(string? customerId)
+        public async Task<Dictionary<string, object>> DeleteCustomer([Required] string? customerId)
         {
             return await customerService.DeleteCustomer(customerId);
         }

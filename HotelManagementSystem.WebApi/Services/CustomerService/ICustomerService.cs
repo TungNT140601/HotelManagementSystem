@@ -1,4 +1,4 @@
-﻿using HotelManagementSystem.WebApi.Models.Customer;
+﻿using HotelManagementSystem.WebApi.Models.CustomerModel;
 
 namespace HotelManagementSystem.WebApi.Services.CustomerService
 {

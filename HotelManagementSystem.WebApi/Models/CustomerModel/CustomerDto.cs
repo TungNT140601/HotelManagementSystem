@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace HotelManagementSystem.WebApi.Models.Customer
+namespace HotelManagementSystem.WebApi.Models.CustomerModel
 {
     public class CustomerDto
     {

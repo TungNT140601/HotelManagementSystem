@@ -1,5 +1,5 @@
 ﻿using HotelManagementSystem.WebApi.DatabaseContext;
-using HotelManagementSystem.WebApi.Models.Customer;
+using HotelManagementSystem.WebApi.Models.CustomerModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 

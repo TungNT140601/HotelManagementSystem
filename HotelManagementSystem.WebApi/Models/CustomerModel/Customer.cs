@@ -1,7 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using HotelManagementSystem.WebApi.Models.BookingModel;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
-namespace HotelManagementSystem.WebApi.Models.Customer
+namespace HotelManagementSystem.WebApi.Models.CustomerModel
 {
     public class Customer
     {
@@ -34,5 +35,6 @@ namespace HotelManagementSystem.WebApi.Models.Customer
         public string ProfileImage { get; set; }
         [Required]
         public bool IsDelete { get; set; }
+        public ICollection<Booking> Bookings { get; set; }
     }
 }

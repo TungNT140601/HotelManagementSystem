@@ -4,6 +4,7 @@ using HotelManagementSystem.WebApi.DatabaseContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelManagementSystem.WebApi.Migrations
 {
     [DbContext(typeof(HotelManagementDBContext))]
-    partial class HotelManagementDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230105114548_add_table_booking")]
+    partial class addtablebooking
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -53,7 +56,7 @@ namespace HotelManagementSystem.WebApi.Migrations
 
                     b.HasIndex("RoomId");
 
-                    b.ToTable("Bookings");
+                    b.ToTable("Booking");
                 });
 
             modelBuilder.Entity("HotelManagementSystem.WebApi.Models.CustomerModel.Customer", b =>
