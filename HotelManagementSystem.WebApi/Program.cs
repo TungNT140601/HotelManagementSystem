@@ -1,5 +1,6 @@
 using HotelManagementSystem.WebApi.DatabaseContext;
 using HotelManagementSystem.WebApi.Services;
+using HotelManagementSystem.WebApi.Services.BookingService;
 using HotelManagementSystem.WebApi.Services.CustomerService;
 using HotelManagementSystem.WebApi.Services.RoomService;
 using HotelManagementSystem.WebApi.Services.RoomTypeService;
@@ -20,6 +21,7 @@ builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IHotelManagementService, HotelManagementService>();
 builder.Services.AddScoped<IRoomTypeService, RoomTypeService>();
 builder.Services.AddScoped<IRoomService, RoomService>();
+builder.Services.AddScoped<IBookingService, BookingService>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
